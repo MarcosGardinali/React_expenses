@@ -32,8 +32,9 @@ function Form(props) {
             tipo,
         });
         // Limpa os estados 'descricao' e 'valor' após a submissão do formulário.
-        setDescricao('');
-        setValor('');
+        setDescricao('')
+        setValor('')
+        setTipo('')
     }
 
     // Retorno do JSX que representa o componente Form.
