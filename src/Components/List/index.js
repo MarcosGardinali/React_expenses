@@ -5,6 +5,7 @@ function List(props){
     return(
         <Expenses 
             despesa={props.despesa}
+            excluirDespesa={props.excluirDespesa}
         />
     )
 }
