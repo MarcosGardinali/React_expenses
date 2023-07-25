@@ -1,0 +1,30 @@
+.main__header{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background-color: #61DBFB;
+}
+
+.main__header main{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.main__header main h1{
+    text-align: center;
+    font-size: 24px;
+    margin: 8px;
+}
+
+.main__header section{
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: -1.6%;
+}
