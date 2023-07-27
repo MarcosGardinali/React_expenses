@@ -1,15 +1,31 @@
-// Importação do arquivo de estilos "Camps.css".
 import './Camps.css';
 
-// Definição do componente funcional Camps, que recebe um objeto 'props' como argumento.
 function Camps(props) {
   // Desestruturação do objeto 'props' para obter as seguintes propriedades:
-  const { nome, type, options, placeholder, valor, aoAlterado } = props;
+  const { nome, type, options, centavos, placeholder, valor, aoAlterado } = props;
 
   // Função que é chamada sempre que o conteúdo do campo de entrada é alterado.
   function aoDigitado(evento) {
     // Chama a função 'aoAlterado' (passada como prop) com o valor digitado no campo de entrada.
     aoAlterado(evento.target.value);
+    const inputValue = evento.target.value;
+
+    // Verifica se o campo é do tipo 'number' e tem um ponto decimal.
+    if (type === 'number' && inputValue.includes('.')) {
+      // Divide o valor em duas partes: a parte inteira e a parte decimal.
+      const [parteInteira, parteDecimal] = inputValue.split('.');
+
+      // Verifica se a parte decimal tem mais de duas casas decimais.
+      if (parteDecimal && parteDecimal.length > 2) {
+        // Limita o número de casas decimais a duas, truncando o restante.
+        const valorFormatado = parseFloat(`${parteInteira}.${parteDecimal.slice(0, 2)}`);
+        aoAlterado(valorFormatado.toFixed(2));
+        return;
+      }
+    }
+
+    // Chama a função 'aoAlterado' (passada como prop) com o valor digitado no campo de entrada.
+    aoAlterado(inputValue);
   }
 
   // Verifica se o tipo (type) do campo é 'radio'.
@@ -23,14 +39,15 @@ function Camps(props) {
           {options.map((option) => (
             <label key={option}>
               {/* O input é do tipo 'radio', pertence ao grupo 'nome' e tem valor igual à opção. */}
-              <input 
-                type="radio" 
-                name={nome} 
+              <input
+                type="radio"
+                name={nome}
                 value={option}
                 // Verifica se o botão de rádio deve ser marcado com base no valor atual (valor) do campo.
                 checked={option === valor}
                 // Chama a função 'aoAlterado' ao selecionar uma opção de rádio.
                 onChange={() => aoAlterado(option)}
+                required
               />
               {option}
             </label>
@@ -46,12 +63,14 @@ function Camps(props) {
       <label>
         {nome}
         {/* O input é do tipo especificado em 'type', com o texto 'placeholder' e o valor 'valor'. */}
-        <input 
-          type={type} 
+        <input
+          type={type}
           placeholder={placeholder}
-          value={valor} 
+          value={valor}
+          step={centavos}
           // Chama a função 'aoDigitado' sempre que o conteúdo do campo de entrada é alterado.
-          onChange={aoDigitado} 
+          onChange={aoDigitado}
+          required
         />
       </label>
     </section>
