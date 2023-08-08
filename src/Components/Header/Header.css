@@ -1,11 +1,11 @@
-.main__header{
+.main__header {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     background-color: #61DBFB;
 }
 
-.main__header main{
+.main__header main {
     display: flex;
     width: 90%;
     flex-direction: column;
@@ -14,17 +14,42 @@
 
 }
 
-.main__header main h1{
+.main__header main h1 {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     margin: 8px;
 }
 
-.main__header section{
+.main__header section {
+    box-sizing: border-box;
     position: relative;
     text-align: center;
     display: flex;
     justify-content: center;
     gap: 5rem;
     margin-bottom: -1.6%;
+}
+
+/*Responsividade tablet*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .main__header main h1 {
+        font-size: 24px;
+    }
+
+    .main__header section {
+        gap: 3rem;
+    }
+}
+
+/*Reponsividade mobile*/
+@media only screen and (max-width: 767px) {
+
+    .main__header main h1 {
+        font-size: 18px;
+    }
+
+    .main__header section {
+        gap: 2rem;
+    }
 }

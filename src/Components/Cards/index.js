@@ -5,8 +5,7 @@ function Card(props){
         <section className='card'>
             <div>
                 <header>
-                    <h2>{props.nome}</h2>
-                    {props.icone}
+                    <h2>{props.nome} {props.icone}</h2>
                 </header>
                 <footer>
                     <p>R${props.valor}</p>
