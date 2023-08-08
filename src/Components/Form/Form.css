@@ -10,3 +10,20 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     flex-wrap: wrap;
 }
+
+/*Responsividade tablet*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .form{
+        margin: 10%;
+    }
+   
+
+}
+
+
+/*Reponsividade mobile*/
+@media only screen and (max-width: 767px) {
+    .form{
+        margin: 10%;
+    }
+}
