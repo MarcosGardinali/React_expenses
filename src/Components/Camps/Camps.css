@@ -1,0 +1,32 @@
+.campo{
+    margin: 5px 0;
+}
+
+.campo div{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.campo label{
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+}
+
+.campo input{
+    background-color: transparent;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 16px;
+    font-size: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.campo-color input{
+    padding: 5px 24px;
+    height: 40px;
+}

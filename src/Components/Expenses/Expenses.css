@@ -1,0 +1,22 @@
+.expenses{
+  display: flex;
+  justify-content: center;
+}
+
+.expenses table {
+  width: 85%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.expenses th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+.expenses th {
+  background-color: #e1e1e1;
+  border-bottom: 1px solid black;
+}
