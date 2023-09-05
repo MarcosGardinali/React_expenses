@@ -1,5 +1,5 @@
 import './Expenses.css';
-import { BsFillTrashFill } from 'react-icons/bs';
+import { BsArrowUpCircleFill, BsFillArrowDownCircleFill, BsFillTrashFill } from 'react-icons/bs';
 
 function Expenses(props) {
   // Verifica se a propriedade 'despesa' (array de despesas) possui elementos.
@@ -22,7 +22,13 @@ function Expenses(props) {
               <tr key={despesa.id}>
                 <td>{despesa.descricao}</td>
                 <td>R${despesa.valor}</td>
-                <td>{despesa.tipo}</td>
+                <td>
+                  {despesa.tipo === 'Saída' ? (
+                    <BsFillArrowDownCircleFill />
+                  ) : (
+                    <BsArrowUpCircleFill />
+                  )}
+                </td>
                 <td>
                   {/* Renderiza o ícone de lixeira preenchida e associa a função 'excluirDespesa'
                       passada como prop, para ser chamada quando o ícone for clicado. */}

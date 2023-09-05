@@ -4,7 +4,7 @@
 }
 
 .expenses table {
-  width: 90%;
+  width: 85%;
   border-collapse: collapse;
   margin-bottom: 20px;
   border: 1px solid black;
@@ -13,7 +13,7 @@
 
 .expenses th, td {
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
 .expenses th {

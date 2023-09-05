@@ -15,7 +15,7 @@ function Header(props){
                 <section>
                     <Card nome="Entradas" icone={<BsArrowUpCircleFill />} valor={entradaTotal.toFixed(2)}/>
                     <Card nome="Saídas" icone={<BsFillArrowDownCircleFill/>} valor={saidaTotal.toFixed(2)} />
-                    <Card nome="Total" icone={<AiFillDollarCircle  size={20} />} valor={(entradaTotal - saidaTotal).toFixed(2)} /> 
+                    <Card nome="Total" icone={<AiFillDollarCircle  size={25} />} valor={(entradaTotal - saidaTotal).toFixed(2)} /> 
                 </section>
             </main>         
         </header>
