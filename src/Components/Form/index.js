@@ -13,18 +13,26 @@ function Form(props) {
     const [valor, setValor] = useState('');
     const [tipo, setTipo] = useState('');
 
+    function obterDataHoraAtual() {
+        const dataAtual = new Date();
+        const ano = dataAtual.getFullYear();
+        const mes = (dataAtual.getMonth() + 1).toString().padStart(2, '0'); // +1 porque os meses começam de 0
+        const dia = dataAtual.getDate().toString().padStart(2, '0');
+        return `${dia}/${mes}/${ano}`;
+    }
+
     function aoSalvar(evento) {
         evento.preventDefault();
-    
+
         // Utilize a função criarNovaDespesa para criar o novo objeto de despesa.
-        const novaDespesa = criarNovaDespesa(descricao, valor, tipo, uuidv4());
-    
+        const novaDespesa = criarNovaDespesa(descricao, valor, tipo, uuidv4(), obterDataHoraAtual());
+
         // Chama a função 'aNovaDespesaAdicionada' (passada como prop) com o novo objeto de despesa.
         props.aNovaDespesaAdicionada(novaDespesa);
-    
+
         // Utilize a função limparEstados para limpar os estados após a submissão do formulário.
         limparEstados(setDescricao, setValor, setTipo);
-      }
+    }
 
     return (
         <form className='form' onSubmit={aoSalvar}>

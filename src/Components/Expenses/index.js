@@ -12,6 +12,7 @@ function Expenses(props) {
             <tr>
               <th>Descrição</th>
               <th>Valor</th>
+              <th>Data</th>
               <th>Tipo</th>
               <th>Ação</th>
             </tr>
@@ -22,6 +23,7 @@ function Expenses(props) {
               <tr key={despesa.id}>
                 <td>{despesa.descricao}</td>
                 <td>R${despesa.valor}</td>
+                <td>{despesa.data}</td>
                 <td>
                   {despesa.tipo === 'Saída' ? (
                     <BsFillArrowDownCircleFill />
